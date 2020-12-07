@@ -1,0 +1,143 @@
+.header__container {
+  background-color: $cGreen;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @media screen and (max-width: 1200px) {
+    padding: 20px;
+  }
+  .header {
+    width: 1200px;
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 8fr 1fr;
+    grid-column-gap: 20px;
+    z-index: 5;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 1075px) {
+      grid-template-columns: 11fr 1fr;
+      grid-column-gap: 0;
+    }
+    .header__logo {
+      font-family: $Comfortaa;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        color: #24c0be;
+      }
+    }
+    .header__contacts {
+      display: flex;
+      justify-content: space-around;
+      @media screen and (max-width: 1075px) {
+        display: none;
+      }
+      .contacts__name {
+        color: #24c0be;
+        font-size: 18px;
+      }
+      .contacts__telephone {
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: lighter;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          color: #24c0be;
+        }
+      }
+    }
+    .header__menu-handler {
+      width: 40px;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      // @media screen and (max-width: 1075px) {
+      //   justify-content: flex-end;
+      // }
+      span {
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        position: relative;
+        border-radius: 5px;
+
+        &:before {
+          position: absolute;
+          content: "";
+          display: block;
+          background-color: white;
+          height: 2px;
+          width: 100%;
+          transform: translateY(-10px);
+          border-radius: 5px;
+          transition: 0.3s;
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          display: block;
+          background-color: white;
+          height: 2px;
+          width: 100%;
+          transform: translateY(10px);
+          border-radius: 5px;
+          transition: 0.3s;
+        }
+      }
+    }
+    //   Активация иконки меню
+    .header__menu-handler_active {
+      span {
+        height: 0px;
+        &:before {
+          transform: translateY(0px) rotate(45deg);
+        }
+        &:after {
+          transform: translateY(0px) rotate(-45deg);
+        }
+      }
+    }
+    .header__navbar {
+      width: 100%;
+      transition: 0.3s;
+      height: 0;
+      opacity: 0;
+      .navbar {
+        width: 100%;
+        .navbar__list {
+          display: flex;
+          justify-content: space-between;
+          list-style: none;
+          margin-bottom: -20px;
+          .navbar__item {
+            .navbar__link {
+              color: white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .header__navbar_active {
+      height: auto;
+      padding: 20px 0;
+      opacity: 1;
+    }
+  }
+}
