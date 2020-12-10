@@ -1,3 +1,129 @@
 .intro {
-  height: 200vh;
+  height: 100vh;
+  background-image: url(../assets/images/intro.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  @media screen and (max-width: 750px) {
+    background-image: url(../assets/images/intro_m.jpg);
+  }
+  .intro__container {
+    width: 1200px;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 750px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      width: 300px;
+    }
+    .intro__content {
+      width: 45%;
+      padding: 0 30px;
+      @media screen and (max-width: 750px) {
+        width: 100%;
+        padding: 0;
+      }
+      .content__title {
+        font-size: 38px;
+        font-weight: 400;
+        z-index: 1;
+        position: relative;
+        @media screen and (max-width: 750px) {
+          font-size: 22px;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: -1;
+          background-color: #055657;
+          height: 132px;
+          width: 132px;
+          transform: translate(-50%, -50%);
+          @media screen and (max-width: 750px) {
+            height: 60px;
+            width: 60px;
+          }
+        }
+      }
+      .content__text {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        .text__par {
+          font-size: 20px;
+          line-height: 28px;
+          display: flex;
+          align-items: center;
+          margin-right: 15px;
+          @media screen and (max-width: 750px) {
+            font-size: 14px;
+          }
+          &:before {
+            content: "";
+            display: flex;
+            height: 12px;
+            width: 12px;
+            background-color: #008481;
+            margin-right: 10px;
+          }
+        }
+      }
+      .content__button {
+        margin-top: 100px;
+        height: 60px;
+        width: 250px;
+        border-radius: 30px;
+        background-color: transparent;
+        border: 1px solid white;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+        @media screen and (max-width: 900px) {
+          margin-top: 50px;
+        }
+        @media screen and (max-width: 750px) {
+          margin-top: 80px;
+          width: 100%;
+        }
+        &:hover {
+          background-color: white;
+          .content__to-price {
+            color: $cGreen;
+          }
+        }
+        .content__to-price {
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          color: white;
+          font-size: 18px;
+          position: absolute;
+          left: 0;
+          top: 31%;
+          transition: 0.3s;
+        }
+      }
+      .intro__down {
+        display: none;
+        @media screen and (max-width: 750px) {
+          display: block;
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
 }

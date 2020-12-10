@@ -1,0 +1,129 @@
+.property {
+  background: #f2f3f3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  .property__container {
+    position: relative;
+    padding: 130px 0;
+    display: flex;
+    justify-content: center;
+    .property__icon {
+      position: absolute;
+      height: 250px;
+      width: 250px;
+      top: 60px;
+      // @media screen and (max-width: 1450px) {
+      //   height: 130px;
+      //   width: 130px;
+      //   top: 100px;
+      //   left: -20px;
+      // }
+    }
+    .property__name {
+      position: absolute;
+      top: 450px;
+      font-size: 36px;
+      opacity: 0.4;
+      line-height: 36px;
+      font-weight: 400;
+      // @media screen and (max-width: 1450px) {
+      //   top: 350px;
+      // }
+    }
+    .property__content {
+      width: 1200px;
+      display: flex;
+      justify-content: center;
+
+      .content__info {
+        padding: 0 50px 0 0px;
+        margin-top: 20px;
+        width: 55%;
+        @media screen and (max-width: 1550px) {
+          padding: 0 50px 0 80px;
+        }
+        @media screen and (max-width: 1400px) {
+          padding: 0 50px 0 150px;
+        }
+        .info__title {
+          font-size: 36px;
+          color: black;
+          font-weight: 500;
+          position: relative;
+          width: 260px;
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: #008481;
+            height: 3px;
+            width: 100%;
+            margin-top: 20px;
+          }
+        }
+        .info__sub-title {
+          margin: 50px 0;
+          font-size: 22px;
+          font-weight: 400;
+        }
+        .info__text {
+          .text__par {
+            font-size: 20px;
+            line-height: 30px;
+            color: #424754;
+            text-align: justify;
+          }
+        }
+      }
+      .content__img {
+        width: 45%;
+      }
+    }
+  }
+}
+
+.left {
+  .property__container {
+    .property__icon {
+      left: -40px;
+    }
+    .property__name {
+      transform: rotate(90deg);
+      left: -60px;
+    }
+    .property__content {
+      .content__info {
+        order: 1;
+      }
+      .content__img {
+        order: 2;
+      }
+    }
+  }
+}
+
+.right {
+  .property__container {
+    .property__icon {
+      right: -40px;
+    }
+    .property__name {
+      transform: rotate(-90deg);
+      right: -60px;
+    }
+    .property__content {
+      .content__info {
+        order: 2;
+      }
+      .content__img {
+        order: 1;
+      }
+    }
+  }
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
