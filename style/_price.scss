@@ -1,0 +1,204 @@
+.price-container {
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+  .price-description {
+    flex: 2;
+    background-image: url(../assets/images/price_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media screen and (max-width: 1700px) {
+      align-items: center;
+    }
+    @media screen and (max-width: 1200px) {
+      order: 1;
+      width: 100%;
+    }
+    .price-description__container {
+      width: 450px;
+      padding: 120px 80px 90px 0;
+      justify-self: end;
+      @media screen and (max-width: 1700px) {
+        padding: 120px 50px 90px 50px;
+        width: 100%;
+      }
+      @media screen and (max-width: 1200px) {
+        padding: 80px 30px 40px;
+      }
+      .price-description__title {
+        font-size: 38px;
+        color: white;
+        font-weight: 500;
+        font-family: $Roboto;
+        position: relative;
+        z-index: 1;
+        @media screen and (max-width: 1200px) {
+          font-size: 28px;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          background-color: #055657;
+          height: 145px;
+          width: 145px;
+          z-index: -1;
+          left: -80px;
+          top: -40px;
+          box-shadow: 0px 4px 5px -5px black;
+          @media screen and (max-width: 1200px) {
+            height: 60px;
+            width: 60px;
+            left: -20px;
+            top: -10px;
+          }
+        }
+      }
+      .price-description__list {
+        list-style: none;
+        .list__item {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-top: 20px;
+          span {
+            display: flex;
+            height: 10px;
+            width: 10px;
+            background-color: #055657;
+            margin-right: 10px;
+          }
+          color: white;
+          font-weight: 300;
+          font-family: $Roboto;
+        }
+      }
+    }
+    .price-description__phones {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .phones__text {
+        font-size: 20px;
+        font-family: $Roboto;
+        color: #85f8f6;
+        text-align: center;
+        font-weight: 300;
+        @media screen and (max-width: 1200px) {
+          font-size: 18px;
+          padding: 0 30px;
+        }
+      }
+      .phones__list {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        .phone {
+          font-family: $Roboto;
+          font-size: 32px;
+          font-weight: 500;
+          color: white;
+          text-decoration: none;
+          margin-top: 5px;
+          @media screen and (max-width: 1200px) {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+  .price {
+    flex: 4;
+    background-image: url(../assets/images/price_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 45px;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+      order: 2;
+    }
+    @media screen and (max-width: 650px) {
+      padding: 55px 20px;
+    }
+    .price__list {
+      color: white;
+      max-width: 800px;
+      .price__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+        &:nth-child(1) {
+          margin-top: 0;
+        }
+        .item__name {
+          flex: 2;
+          font-size: 30px;
+          font-weight: 300;
+          position: relative;
+          @media screen and (max-width: 650px) {
+            font-size: 18px;
+          }
+          .sub-name {
+            color: #85f8f6;
+            font-size: 20px;
+            font-weight: 300;
+            position: absolute;
+            @media screen and (max-width: 650px) {
+              font-size: 14px;
+            }
+          }
+        }
+        .item__new-price {
+          flex: 1;
+          font-size: 32px;
+          position: relative;
+          @media screen and (max-width: 650px) {
+            font-size: 18px;
+            text-align: end;
+          }
+          .star {
+            position: absolute;
+          }
+        }
+        .item__old-price {
+          flex: 1;
+          color: #73dadb;
+          font-size: 24px;
+          text-decoration: line-through;
+          @media screen and (max-width: 650px) {
+            font-size: 14px;
+            text-align: end;
+          }
+        }
+      }
+    }
+    .price__sale {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      margin-top: 50px;
+      color: #85f8f6;
+      font-size: 20px;
+      font-family: $Roboto;
+      font-weight: 300;
+      @media screen and (max-width: 650px) {
+        font-size: 14px;
+      }
+      .star {
+        position: absolute;
+        margin-left: -10px;
+      }
+    }
+  }
+}

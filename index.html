@@ -1,11 +1,20 @@
+<?php header("Content-Type:text/html;charset=utf-8");?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta
+      name="description"
+      content="Forbo Marmoleum на 97% состоит из натуральных компонентов. Его состав
+    – это льняное масло, древесная мука и смолы, известняк,
+    цветочные пигменты и джутовая подложка."
+    />
+    <meta name="keywords" content="forbo marmoleum натуральный линолеум" />
+    <script defer src="./script/price-value.js"></script>
+    <link rel="dns-prefetch" href="https://www.cbr-xml-daily.ru/" />
+    <script src="//www.cbr-xml-daily.ru/daily_jsonp.js" async></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
@@ -47,16 +56,16 @@
             <nav class="navbar">
               <ul class="navbar__list">
                 <li class="navbar__item">
-                  <a href="#" class="navbar__link">Item1</a>
+                  <a href="#catalogue" class="navbar__link">Каталог</a>
                 </li>
                 <li class="navbar__item">
-                  <a href="#" class="navbar__link">Item2</a>
+                  <a href="#properties" class="navbar__link">Свойства</a>
                 </li>
                 <li class="navbar__item">
-                  <a href="#" class="navbar__link">Item3</a>
+                  <a href="#price" class="navbar__link">Цены</a>
                 </li>
                 <li class="navbar__item">
-                  <a href="#" class="navbar__link">Item4</a>
+                  <a href="#contacts" class="navbar__link">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -77,7 +86,7 @@
               <p class="text__par">Устойчиво к когтям жиотных</p>
             </div>
             <button class="content__button">
-              <a href="#price" class="content__to-price">Посмотреть цены</a>
+              <a href="#priceList" class="content__to-price">Посмотреть цены</a>
             </button>
             <a href="#eco" class="intro__down"
               ><img
@@ -97,7 +106,7 @@
           <h4 class="property__name">Эко-продукт</h4>
           <div class="property__content">
             <div class="content__info">
-              <h5 class="info__title">Экологичность</h5>
+              <h5 class="info__title title_mobile_first">Экологичность</h5>
               <p class="info__sub-title">
                 Forbo Marmoleum отмечен эко-сертификатами Blue Angel и Nordic
                 Swan
@@ -123,7 +132,7 @@
           </div>
         </div>
       </section>
-      <section class="catalogue">
+      <section class="catalogue" id="catalogue">
         <div class="catalogue__upper-container">
           <div class="upper-container__img-block">
             <img
@@ -172,7 +181,7 @@
             </li>
           </ul>
         </div>
-        <div class="catalogue__list">
+        <div class="catalogue__list" id="priceList">
           <div class="collection">
             <div class="collection__header">
               <div class="collection__header-container">
@@ -181,14 +190,19 @@
                   <p class="collection__info-text">
                     коллекция выпускается в толщине:
                   </p>
-                  <div class="collection__info-widths">
+                  <p class="collection__info-text_mobile">
+                    выпускается в толщине 2,5 mm
+                  </p>
+                  <div class="collection__info-widths radio_hide">
                     <div class="collection__width collection__width_active">
                       <div class="radio"><span></span></div>
                       <p class="width">2,5 mm</p>
                     </div>
                   </div>
                 </div>
-                <div class="collection__price">Цена: 2790 ₽</div>
+                <div class="collection__price">
+                  Цена: <span class="width-25-price-old"></span> ₽
+                </div>
               </div>
             </div>
             <div class="collection__container">
@@ -304,14 +318,19 @@
                   <p class="collection__info-text">
                     коллекция выпускается в толщине:
                   </p>
-                  <div class="collection__info-widths">
+                  <p class="collection__info-text_mobile">
+                    выпускается в толщине 2,5 mm
+                  </p>
+                  <div class="collection__info-widths radio_hide">
                     <div class="collection__width collection__width_active">
-                      <div class="radio"><span></span></div>
+                      <div class="radio radio_hide"><span></span></div>
                       <p class="width">2,5 mm</p>
                     </div>
                   </div>
                 </div>
-                <div class="collection__price">Цена: 2790 ₽</div>
+                <div class="collection__price">
+                  Цена: <span class="width-25-price-old"></span> ₽
+                </div>
               </div>
             </div>
             <div class="collection__container">
@@ -419,7 +438,7 @@
               </div>
             </div>
           </div>
-          <div class="collection">
+          <div class="collection real">
             <div class="collection__header">
               <div class="collection__header-container">
                 <p class="collection__name">Marmoleum Real</p>
@@ -428,26 +447,33 @@
                     коллекция выпускается в толщине:
                   </p>
                   <div class="collection__info-widths">
-                    <div class="collection__width collection__width_active">
+                    <div
+                      class="collection__width collection__width_active width_two-half"
+                    >
                       <div class="radio"><span></span></div>
                       <p class="width">2,5 mm</p>
                     </div>
-                    <div class="collection__width">
+                    <div class="collection__width width_two">
                       <div class="radio"><span></span></div>
                       <p class="width">2 mm</p>
                     </div>
-                    <div class="collection__width">
+                    <div class="collection__width width_all hide">
                       <div class="radio"><span></span></div>
                       <p class="width">все</p>
                     </div>
                   </div>
                 </div>
-                <div class="collection__price">Цена: 2790 ₽</div>
+                <div class="collection__price">
+                  Цена: <span class="width-25-price-old"></span> ₽/<span
+                    class="width-2-price-old"
+                  ></span>
+                  ₽
+                </div>
               </div>
             </div>
             <div class="collection__container">
-              <div class="collection__list">
-                <div class="collection__item">
+              <div class="collection__list real-collection">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3032.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -467,7 +493,7 @@
                     <p class="item__name">3032 mist grey</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/2621.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -487,7 +513,7 @@
                     <p class="item__name">2621 dove grey</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3146.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -507,7 +533,7 @@
                     <p class="item__name">3146 serene grey</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/2629.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -527,7 +553,7 @@
                     <p class="item__name">2629 eiger</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3137.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -547,7 +573,7 @@
                     <p class="item__name">3137 slate grey</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3136.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -567,7 +593,7 @@
                     <p class="item__name">3136 concrete</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3048.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -587,7 +613,7 @@
                     <p class="item__name">3048 graphite</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3236.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -607,7 +633,7 @@
                     <p class="item__name">3236 dark bistre</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3234.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -627,7 +653,7 @@
                     <p class="item__name">3234 forest ground</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3232.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -647,7 +673,7 @@
                     <p class="item__name">3232 horse roan</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3141.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -667,7 +693,7 @@
                     <p class="item__name">3141 himalaya</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3120.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -687,7 +713,7 @@
                     <p class="item__name">3120 rosato</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/2713.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -707,7 +733,7 @@
                     <p class="item__name">2713 calico</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/2499.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -727,7 +753,7 @@
                     <p class="item__name">2499 sand</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3038.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -747,7 +773,7 @@
                     <p class="item__name">3038 Caribbean</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3075.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -767,7 +793,7 @@
                     <p class="item__name">3075 shell</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3233.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -787,7 +813,7 @@
                     <p class="item__name">3233 shitake</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/2767.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -807,7 +833,7 @@
                     <p class="item__name">2767 rust</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3174.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -827,7 +853,7 @@
                     <p class="item__name">3174 Sahara</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3173.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -847,7 +873,7 @@
                     <p class="item__name">3173 Van Gogh</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3225.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -867,7 +893,7 @@
                     <p class="item__name">3225 dandelion</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3847.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -887,7 +913,7 @@
                     <p class="item__name">3847 golden saffron</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3881.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -907,7 +933,7 @@
                     <p class="item__name">3881 green wellness</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3224.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -927,7 +953,7 @@
                     <p class="item__name">3224 chartreuse</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3219.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -947,7 +973,7 @@
                     <p class="item__name">3219 spa</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3030.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -967,7 +993,7 @@
                     <p class="item__name">3030 blue</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3055.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -987,7 +1013,7 @@
                     <p class="item__name">3055 fresco blue</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3270.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -1007,7 +1033,7 @@
                     <p class="item__name">3270 violet</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3053.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -1027,7 +1053,7 @@
                     <p class="item__name">3053 dove blue</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3123.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -1047,7 +1073,7 @@
                     <p class="item__name">3123 arabesque</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3272.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -1067,7 +1093,7 @@
                     <p class="item__name">3272 plum</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two-half">
                   <a
                     href="./assets/articles/real/big/3268.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -1087,7 +1113,7 @@
                     <p class="item__name">3268 honey suckle</p>
                   </a>
                 </div>
-                <div class="collection__item">
+                <div class="collection__item two two-half">
                   <a
                     href="./assets/articles/real/big/3127.jpg"
                     onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
@@ -1109,651 +1135,670 @@
                 </div>
               </div>
             </div>
-            <div class="collection">
-              <div class="collection__header">
-                <div class="collection__header-container">
-                  <p class="collection__name">Marmoleum Striato</p>
-                  <div class="collection__info">
-                    <p class="collection__info-text">
-                      коллекция выпускается в толщине:
-                    </p>
-                    <div class="collection__info-widths">
-                      <div class="collection__width collection__width_active">
-                        <div class="radio"><span></span></div>
-                        <p class="width">2,5 mm</p>
-                      </div>
+          </div>
+          <div class="collection">
+            <div class="collection__header">
+              <div class="collection__header-container">
+                <p class="collection__name">Marmoleum Striato</p>
+                <div class="collection__info">
+                  <p class="collection__info-text">
+                    коллекция выпускается в толщине:
+                  </p>
+                  <p class="collection__info-text_mobile">
+                    выпускается в толщине 2,5 mm
+                  </p>
+                  <div class="collection__info-widths radio_hide">
+                    <div class="collection__width collection__width_active">
+                      <div class="radio radio_hide"><span></span></div>
+                      <p class="width">2,5 mm</p>
                     </div>
                   </div>
-                  <div class="collection__price">Цена: 2790 ₽</div>
                 </div>
-              </div>
-              <div class="collection__container">
-                <div class="collection__list">
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/3575.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/3575.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 3575 White Cliffs. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3575 white cliffs</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5230.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5230.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5230 White Wash. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5230 white wash</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5216.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5216.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5216 Pacific Beaches. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5216 pacific beaches</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5232.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5232.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5232 Rocky Ice. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5232 rocky ice</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/3573.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/3573.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 3573 Trace of Nature. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3573 trace of nature</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5217.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5217.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5217 Whithered Prairie. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5217 whithered prairie</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5225.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5225.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5225 Compressed Time. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5225 compressed time</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5239.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5239.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5239 Oxidized Copper. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5239 oxidized copper</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5238.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5238.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5238 Straw Field. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5238 straw field</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5240.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5240.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5240 Canyon Shadow. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5240 canyon shadow</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5218.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5218.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5218 Welsh Moor. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5218 welsh moor</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/striato/big/5237.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/striato/big/5237.jpg"
-                          class="item__img"
-                          alt="Marmoleum Striato 5237 Black Sheep. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">5237 black sheep</p>
-                    </a>
-                  </div>
+                <div class="collection__price">
+                  Цена: <span class="width-25-price-old"></span> ₽
                 </div>
               </div>
             </div>
-            <div class="collection">
-              <div class="collection__header">
-                <div class="collection__header-container">
-                  <p class="collection__name">Marmoleum Walton</p>
-                  <div class="collection__info">
-                    <p class="collection__info-text">
-                      коллекция выпускается в толщине:
-                    </p>
-                    <div class="collection__info-widths">
-                      <div class="collection__width collection__width_active">
-                        <div class="radio"><span></span></div>
-                        <p class="width">2,5 mm</p>
-                      </div>
+            <div class="collection__container">
+              <div class="collection__list">
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/3575.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/3575.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 3575 White Cliffs. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
                     </div>
-                  </div>
-                  <div class="collection__price">Цена: 2790 ₽</div>
-                </div>
-              </div>
-              <div class="collection__container">
-                <div class="collection__list">
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3369.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3369.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3369 Titanium. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3369 titanium</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/171.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/171.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 171 Cement. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">171 cement</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3371.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3371.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3371 Cement. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3371 cement</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3367.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3367.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3367 Alloy. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3367 alloy</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/186.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/186.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 186 Lead. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">186 lead</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/173.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/173.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 173 Paving. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">173 paving</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3368.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3368.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3368 Grey Iron. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3368 grey iron</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/123.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/123.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 123 Black. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">123 black</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3352.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3352.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3352 Berlin Red. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3352 Berlin red</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3370.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3370.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3370 Terracotta. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3370 terracotta</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3353.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3353.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3353 Eggplant purple. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3353 eggplant purple</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3363.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3363.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3363 Lilac. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3363 lilac</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3360.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3360.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3360 Vintage Blue. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3360 vintage blue</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3358.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3358.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3358 Petrol. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3358 petrol</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3359.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3359.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3359 Bottle Green. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3359 bottle green</p>
-                    </a>
-                  </div>
-                  <div class="collection__item">
-                    <a
-                      href="./assets/articles/walton/big/3355.jpg"
-                      onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
-                    >
-                      <div class="collection__images-container">
-                        <img
-                          src="./assets/articles/walton/big/3355.jpg"
-                          class="item__img"
-                          alt="Marmoleum Walton 3355 Rosemary Green. Толщина: 2,5 mm"
-                        />
-                        <img
-                          src="./assets/icons/zoom.svg"
-                          class="item__icon"
-                          alt=""
-                        />
-                      </div>
-                      <p class="item__name">3355 rosemary green</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="collection__contacts">
-                <div class="collection__contacts-info">
-                  <p class="contact-info__call-par">
-                    Чтобы оформить заказ, позвоните нам по телефону:
-                  </p>
-                  <a href="tel:+74996004569" class="contact-info__phone">
-                    +7 (499) 600-45-60
+                    <p class="item__name">3575 white cliffs</p>
                   </a>
-                  <p class="contact-info__order-par">
-                    Или закажите обратный звонок<br />и наш менеджер Вам
-                    перезвонит:
-                  </p>
-                  <button class="contat-info__order-btn">
-                    Заказать звонок
-                  </button>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5230.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5230.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5230 White Wash. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5230 white wash</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5216.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5216.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5216 Pacific Beaches. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5216 pacific beaches</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5232.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5232.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5232 Rocky Ice. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5232 rocky ice</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/3573.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/3573.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 3573 Trace of Nature. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3573 trace of nature</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5217.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5217.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5217 Whithered Prairie. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5217 whithered prairie</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5225.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5225.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5225 Compressed Time. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5225 compressed time</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5239.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5239.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5239 Oxidized Copper. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5239 oxidized copper</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5238.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5238.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5238 Straw Field. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5238 straw field</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5240.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5240.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5240 Canyon Shadow. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5240 canyon shadow</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5218.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5218.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5218 Welsh Moor. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5218 welsh moor</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/striato/big/5237.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/striato/big/5237.jpg"
+                        class="item__img"
+                        alt="Marmoleum Striato 5237 Black Sheep. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">5237 black sheep</p>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+          <div class="collection">
+            <div class="collection__header">
+              <div class="collection__header-container">
+                <p class="collection__name">Marmoleum Walton</p>
+                <div class="collection__info">
+                  <p class="collection__info-text">
+                    коллекция выпускается в толщине:
+                  </p>
+                  <p class="collection__info-text_mobile">
+                    выпускается в толщине 2,5 mm
+                  </p>
+                  <div class="collection__info-widths radio_hide">
+                    <div class="collection__width collection__width_active">
+                      <div class="radio radio_hide"><span></span></div>
+                      <p class="width">2,5 mm</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="collection__price">
+                  Цена: <span class="width-25-price-old"></span> ₽
+                </div>
+              </div>
+            </div>
+            <div class="collection__container">
+              <div class="collection__list">
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3369.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3369.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3369 Titanium. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3369 titanium</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/171.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/171.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 171 Cement. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">171 cement</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3371.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3371.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3371 Cement. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3371 cement</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3367.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3367.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3367 Alloy. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3367 alloy</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/186.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/186.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 186 Lead. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">186 lead</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/173.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/173.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 173 Paving. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">173 paving</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3368.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3368.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3368 Grey Iron. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3368 grey iron</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/123.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/123.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 123 Black. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">123 black</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3352.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3352.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3352 Berlin Red. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3352 Berlin red</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3370.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3370.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3370 Terracotta. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3370 terracotta</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3353.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3353.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3353 Eggplant purple. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3353 eggplant purple</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3363.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3363.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3363 Lilac. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3363 lilac</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3360.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3360.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3360 Vintage Blue. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3360 vintage blue</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3358.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3358.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3358 Petrol. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3358 petrol</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3359.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3359.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3359 Bottle Green. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3359 bottle green</p>
+                  </a>
+                </div>
+                <div class="collection__item">
+                  <a
+                    href="./assets/articles/walton/big/3355.jpg"
+                    onclick="return hs.expand (this, { captionEval: 'this.thumb.alt' })"
+                  >
+                    <div class="collection__images-container">
+                      <img
+                        src="./assets/articles/walton/big/3355.jpg"
+                        class="item__img"
+                        alt="Marmoleum Walton 3355 Rosemary Green. Толщина: 2,5 mm"
+                      />
+                      <img
+                        src="./assets/icons/zoom.svg"
+                        class="item__icon"
+                        alt=""
+                      />
+                    </div>
+                    <p class="item__name">3355 rosemary green</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="collection__contacts">
+              <div class="collection__contacts-info">
+                <p class="contact-info__call-par">
+                  Чтобы оформить заказ, позвоните нам по телефону:
+                </p>
+                <a href="tel:+74996004569" class="contact-info__phone">
+                  +7 (499) 600-45-60
+                </a>
+                <p class="contact-info__order-par">
+                  Или закажите обратный звонок<br />и наш менеджер Вам
+                  перезвонит:
+                </p>
+                <button class="contat-info__order-btn formHandler">
+                  Заказать звонок
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="catalogue__handler">
+        <a class="catalogue__handler" href="#priceList">
           <p class="handler__text">посмотреть все артикулы</p>
           <img
             src="./assets/icons/collection_arrow.svg"
             alt=""
             class="handler__icon"
           />
+        </a>
+        <div class="catalogue__mobile-btn">
+          <button class="mobile-order-btn formHandler">Заказать звонок</button>
         </div>
       </section>
-      <section class="property left">
+      <section
+        class="property left"
+        style="box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
+        id="properties"
+      >
         <div class="property__container">
           <img
             src="./assets/images/icon-bacter.svg"
             alt="Антибактериальность forbo marmoleum"
-            class="property__icon"
+            class="property__icon second__icon"
           />
           <h4 class="property__name">Безопасность</h4>
           <div class="property__content">
             <div class="content__info">
-              <h5 class="info__title">Антибактериальное покрытие</h5>
+              <h5 class="info__title title_mobile_second">
+                Антибактериальное покрытие
+              </h5>
               <div class="info__text mt-50">
                 <p class="text__par">
                   Льняное масло в составе не дает развиваться бактериям на
@@ -1776,7 +1821,7 @@
           <img
             src="./assets/images/icon-time.svg"
             alt="Долговечность forbo marmoleum"
-            class="property__icon"
+            class="property__icon third__icon"
           />
           <h4 class="property__name">Долговечность</h4>
           <div class="property__content">
@@ -1803,10 +1848,414 @@
           </div>
         </div>
       </section>
+      <section class="price-container">
+        <div class="price-description" id="contacts">
+          <div class="price-description__container">
+            <h4 class="price-description__title">
+              Купить Forbo<br />Marmoleum
+            </h4>
+            <ul class="price-description__list">
+              <li class="list__item">
+                <span></span>Любой цвет под заказ из Голландии от 5 м2
+              </li>
+              <li class="list__item">
+                <span></span>Доступен с акустической полдожкой 17 Дб
+              </li>
+              <li class="list__item"><span></span>Дотавка по всей России</li>
+              <li class="list__item">
+                <span></span>Полная техническая поддержка
+              </li>
+            </ul>
+          </div>
+          <div class="price-description__phones">
+            <p class="phones__text">
+              Чтобы оформить заказ, позвоните нам по телефону:
+            </p>
+            <div class="phones__list">
+              <a href="tel:+74996004560" class="phone">+7 (499) 600-45-60</a>
+              <a href="tel:+78126004560" class="phone">+7 (812) 600-45-60</a>
+            </div>
+          </div>
+        </div>
+        <div class="price" id="price">
+          <div class="price__list">
+            <div class="price__item">
+              <p class="item__name">Marmoleum Cocoa</p>
+              <p class="item__new-price">
+                <span class="width-25-price"></span> ₽<span class="star"
+                  >*</span
+                >
+              </p>
+              <p class="item__old-price">
+                <span class="width-25-price-old"></span> ₽
+              </p>
+            </div>
+            <div class="price__item">
+              <p class="item__name">Marmoleum Striato</p>
+              <p class="item__new-price">
+                <span class="width-25-price"></span> ₽<span class="star"
+                  >*</span
+                >
+              </p>
+              <p class="item__old-price">
+                <span class="width-25-price-old"></span> ₽
+              </p>
+            </div>
+            <div class="price__item">
+              <p class="item__name">Marmoleum Slate</p>
+              <p class="item__new-price">
+                <span class="width-25-price"></span> ₽<span class="star"
+                  >*</span
+                >
+              </p>
+              <p class="item__old-price">
+                <span class="width-25-price-old"></span> ₽
+              </p>
+            </div>
+            <div class="price__item">
+              <p class="item__name">Marmoleum Walton</p>
+              <p class="item__new-price">
+                <span class="width-25-price"></span> ₽<span class="star"
+                  >*</span
+                >
+              </p>
+              <p class="item__old-price">
+                <span class="width-25-price-old"></span> ₽
+              </p>
+            </div>
+            <div class="price__item">
+              <p class="item__name">
+                Marmoleum Real<br /><span class="sub-name">в толщине 2 mm</span>
+              </p>
+              <p class="item__new-price">
+                <span class="width-2-price"></span> ₽<span class="star">*</span>
+              </p>
+              <p class="item__old-price">
+                <span class="width-2-price-old"></span> ₽
+              </p>
+            </div>
+            <div class="price__item">
+              <p class="item__name">
+                Marmoleum Real<br /><span class="sub-name"
+                  >в толщине 2,5 mm</span
+                >
+              </p>
+              <p class="item__new-price">
+                <span class="width-25-price"></span> ₽<span class="star"
+                  >*</span
+                >
+              </p>
+              <p class="item__old-price">
+                <span class="width-25-price-old"></span> ₽
+              </p>
+            </div>
+          </div>
+          <p class="price__sale">
+            <span class="star">*</span>Скидка по кодовому слову
+            &laquo;ЭКОЛОГИЯ&raquo;
+          </p>
+        </div>
+      </section>
+      <div class="order__call formHandler">
+        <button class="order__call-button">Заказать звонок</button>
+      </div>
+      <section class="rating" id="rating">
+        <div class="rating__header">
+          <h2 class="rating__title">Напольные покрытия для дома</h2>
+          <hr />
+          <p class="rating__sub-title">сравнение основных характеристик</p>
+        </div>
+        <div class="rating__collections">
+          <div class="rating__item">
+            <p class="item__name">
+              Линолеум ПВХ
+              <img
+                src="./assets/icons/rating-arrow.svg"
+                alt=""
+                class="nextBlock"
+                onclick="nextBlock()"
+              />
+              <img
+                src="./assets/icons/rating-arrow.svg"
+                alt=""
+                class="prevBlock"
+                onclick="prevBlock()"
+              />
+            </p>
+            <div
+              style="background-image: url(./assets/images/mob-table-pvx.png)"
+              class="item__charact-list"
+            >
+              <div class="item__charact">
+                <img src="./assets/icons/stars_two.png" alt="" class="stars" />
+                <p class="charact__name">Покрытие из ПВХ</p>
+              </div>
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Много цветов и рисунков</p>
+              </div>
+              <div class="item__charact">
+                <img src="./assets/icons/stars_one.png" alt="" class="stars" />
+                <p class="charact__name">Срок службы 10 лет</p>
+              </div>
+              <div class="item__charact">
+                <img src="./assets/icons/stars_zero.png" alt="" class="stars" />
+                <p class="charact__name">Не восстанавливается</p>
+              </div>
+              <div class="item__charact">
+                <img src="./assets/icons/stars_one.png" alt="" class="stars" />
+                <p class="charact__name">Слабо устойчив к ножкам мебели</p>
+              </div>
+            </div>
+          </div>
+          <div class="rating__item">
+            <p class="item__name" style="color: #055657">
+              Forbo Marmoleum
+              <img
+                src="./assets/icons/rating-arrow.svg"
+                alt=""
+                class="nextBlock"
+                onclick="nextBlock()"
+              />
+              <img
+                src="./assets/icons/rating-arrow.svg"
+                alt=""
+                class="prevBlock"
+                onclick="prevBlock()"
+              />
+            </p>
+            <div
+              style="background-image: url(./assets/images/mob-table-marm.jpg)"
+              class="item__charact-list"
+            >
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Эко-покрытие</p>
+              </div>
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Более 300 цветов</p>
+              </div>
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Срок службы до 50 лет</p>
+              </div>
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Возможность восстановления</p>
+              </div>
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Устойчив к ножкам мебели</p>
+              </div>
+            </div>
+          </div>
+          <div class="rating__item">
+            <p class="item__name">
+              Паркетная доска
+              <img
+                src="./assets/icons/rating-arrow.svg"
+                alt=""
+                class="nextBlock"
+                onclick="nextBlock()"
+              />
+              <img
+                src="./assets/icons/rating-arrow.svg"
+                alt=""
+                class="prevBlock"
+                onclick="prevBlock()"
+              />
+            </p>
+            <div
+              style="background-image: url(./assets/images/mob-table-wood.jpg)"
+              class="item__charact-list"
+            >
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Покрытие из дерева</p>
+              </div>
+              <div class="item__charact">
+                <img src="./assets/icons/stars_one.png" alt="" class="stars" />
+                <p class="charact__name">Цвета от бежевого к черному</p>
+              </div>
+              <div class="item__charact">
+                <img src="./assets/icons/stars_two.png" alt="" class="stars" />
+                <p class="charact__name">Срок службы до 25 лет</p>
+              </div>
+              <div class="item__charact">
+                <img src="./assets/icons/stars_two.png" alt="" class="stars" />
+                <p class="charact__name">Возможность восстановления</p>
+              </div>
+              <div class="item__charact">
+                <img
+                  src="./assets/icons/stars_three.png"
+                  alt=""
+                  class="stars"
+                />
+                <p class="charact__name">Устойчив к ножкам мебели</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__container">
+          <p class="footer__company-name">ООО &laquo;Гельстер&raquo;</p>
+          <div class="footer__contacts">
+            <p class="footer__address">
+              <span class="bold">Офис Москва:</span>
+              <a
+                class="address__link"
+                href="https://goo.gl/maps/UPxfVxVSAWSd6Pw19"
+                target="_blank"
+                >пр. Андропова, дом 22,<br />БЦ &laquo;Нагатинский&raquo;, офис
+                810</a
+              >
+            </p>
+            <p class="link__container">
+              <a href="tel:+74996004560" class="footer__phoone"
+                >+7 (499) 600-45-60</a
+              >
+            </p>
+          </div>
+          <div class="footer__contacts">
+            <p class="footer__address">
+              <span class="bold">Офис Санкт-Петербург:</span>
+              <a
+                class="address__link"
+                href="https://goo.gl/maps/MyxgR6aE6x68Sg9W6"
+                target="_blank"
+                >Васильевский остров,<br />9-я линия, дом 34, БЦ
+                &laquo;Magnus&raquo;, офис 720</a
+              >
+            </p>
+            <p class="link__container">
+              <a href="tel:+78126004560" class="footer__phoone"
+                >+7 (812) 600-45-60</a
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
+    <section class="pop-up">
+      <div class="pop-up__container">
+        <form class="form" action="./php/order.php" method="post">
+          <div class="form__header">
+            <h1 class="form__title">Forbo<br />Marmoleum</h1>
+            <p class="form__sub-title">
+              Чтобы оформить заказ, позвоните нам по телефону:
+            </p>
+            <p class="form__number">
+              <a href="tel:+74996004560">+7 (499) 600-45-60</a>
+            </p>
+            <div class="form__close">
+              <img
+                src="./assets/icons/close_form.svg"
+                class="form__close-icon"
+              />
+            </div>
+          </div>
+          <div class="form__body">
+            <label class="form__body-label"
+              >или закажите обратный звонок,<br />и наш менеджер Вам
+              перезвонит</label
+            >
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              class="form__input"
+              placeholder="Имя"
+              required
+            />
+            <input
+              type="tel"
+              name="userTel"
+              id="userTel"
+              class="form__input"
+              placeholder="Телефон"
+              required
+            />
+            <input type="submit" value="Заказать" class="form__submit" />
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="phone-call">
+      <a href="tel:+74996004560" class="phone-call__link"
+        ><img
+          src="./assets/icons/phone-call.svg"
+          alt=""
+          class="phone-call__img"
+      /></a>
+    </div>
+    <div class="success-send">
+      <p class="seccess-send__text">
+        Спасибо!<br />Ваша заявка отправлена.<br />В ближайшее время наш
+        специалист свяжется с Вами.
+      </p>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".form").submit(function (e) {
+          e.preventDefault();
+          // Устанавливаем событие отправки для формы с id=form
+          var form_data = $(this).serialize(); // Собираем все данные из формы
+          $.ajax({
+            type: "POST", // Метод отправки
+            url: "./php/order.php", // Путь до php файла отправителя
+            data: form_data,
+            success: function () {
+              // Код в этом блоке выполняется при успешной отправке сообщения
+              $(".pop-up").removeClass("pop-up_active");
+              $(".success-send").addClass("success-send_active");
+              setTimeout(() => {
+                $(".success-send").removeClass("success-send_active");
+              }, 3000);
+            },
+          });
+        });
+      });
+    </script>
 
     <script defer src="./script/menu-handler.js"></script>
     <script defer src="./script/catalogue.js"></script>
     <script defer src="./highslide/highslide.js"></script>
+    <script defer src="./script/form-handler.js"></script>
+    <script defer src="./script/rating.js"></script>
   </body>
 </html>

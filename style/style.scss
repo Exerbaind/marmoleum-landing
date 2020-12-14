@@ -10,15 +10,112 @@ html {
 }
 body {
   font-family: $Roboto;
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .highslide-credits {
   display: none !important;
 }
 
 .container {
-  @import "./_navbar.scss";
-  @import "./_intro";
+  @import "./navbar.scss";
+  @import "./intro";
   @import "./property";
   @import "./catalogue";
   @import "./price";
+  @import "./rating";
+  @import "./footer";
+  .order__call {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #055657;
+    .order__call-button {
+      height: 70px;
+      width: 270px;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      border: 1px solid white;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      outline: none;
+      &:hover {
+        background-color: white;
+        color: #55a5a6;
+        border: 1px solid white;
+      }
+      &:active {
+        box-shadow: inset 0px 0px 10px 0px black;
+      }
+    }
+  }
+}
+.phone-call {
+  display: none;
+  @media screen and (max-width: 500px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 70px;
+    width: 70px;
+    background-color: #055657;
+    border-radius: 50%;
+    animation: shine 2s infinite;
+    .phone-call__link {
+      width: 50%;
+      .phone-call__img {
+        width: 100%;
+      }
+    }
+  }
+}
+.success-send {
+  position: fixed;
+  top: 65px;
+  left: -100%;
+  transform: translateX(0%);
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 500px;
+  padding: 10px;
+  z-index: 15;
+  text-align: center;
+  transition: 0.3s;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    transform: translateX(0);
+    left: -100%;
+  }
+  .seccess-send__text {
+    font-size: 18px;
+  }
+}
+.success-send_active {
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+@import "./pop-up";
+
+@keyframes shine {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
