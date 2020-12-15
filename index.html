@@ -2224,6 +2224,7 @@
         специалист свяжется с Вами.
       </p>
     </div>
+    <p class="region">fsdfdsfds</p>
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -2249,6 +2250,26 @@
             },
           });
         });
+      });
+    </script>
+    <script>
+      // region.innerHTML = data.region;
+      let region = document.querySelector(".region");
+      $.getJSON("http://ip-api.com/json?callback=?", function (data) {
+        // bd = data.regions;
+        switch (data.region) {
+          case "MOS":
+            console.log("Московская область");
+            break;
+          case "MOW":
+            console.log("Москва");
+            break;
+          case "SPE":
+            console.log("Санкт-Петербург");
+            break;
+          default:
+            console.log("Другой регион");
+        }
       });
     </script>
 
